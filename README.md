@@ -3,3 +3,7 @@ This project is indented to use spring core without spring boot dependencies to 
 any xml configuration.
 
 Project created as a maven project and it is ready to go
+
+
+# Update
+Aspect feature added to the project. 
