@@ -1,6 +1,8 @@
 package com.birkan.spring.core;
 
 import com.birkan.spring.core.animals.Animal;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
@@ -17,14 +19,9 @@ public class CoreComponentScanApp {
     public static void main(String[] args) {
         applicationContext = new AnnotationConfigApplicationContext(CoreComponentScanApp.class);
 
-        System.out.println("Getting the names of the beans that i found during scanning: ");
+        Logger logger = LoggerFactory.getLogger(CoreComponentScanApp.class);
 
-        for (String beanName : applicationContext.getBeanDefinitionNames()) {
-            System.out.println(beanName);
-        }
-
-
-        System.out.println("Getting the implementation of animals from applicationContext");
+        logger.info("Getting the implementation of animals from applicationContext");
 
         Animal bean = applicationContext.getBean(Animal.class);
         bean.sayHello();
